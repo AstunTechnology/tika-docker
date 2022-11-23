@@ -4,7 +4,9 @@
 
 Set up the lucene-geo-gazetteer as per https://cwiki.apache.org/confluence/display/TIKA/GeoTopicParser and set it running in server mode.
 
-Edit GeoTopicConfig.properties to set the `gazetter.rest.api` to point at the URL for your lucene-geo-gazetteer. This should be the root url including the port (defaults to 8765). Note the spelling of `gazetter`!
+Edit https://github.com/AstunTechnology/tika-docker/blob/geotopicparser/geotopic-config/org/apache/tika/parser/geo/topic/GeoTopicConfig.properties to set the `gazetter.rest.api` to point at the URL for your lucene-geo-gazetteer. This should be the root url including the port (defaults to 8765). Note the spelling of `gazetter`!
+
+Note also that if you are running lucene-geo-gazetteer natively, and this docker instance on the same host, then you need to set `gazetter.rest.api` to the `docker_gateway_host` URL, which is generally 172.17.0.1
 
 Download https://opennlp.sourceforge.net/models-1.5/en-ner-location.bin and place it in `./org/apache/tika/parser/geo/topic`
 
